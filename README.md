@@ -4,49 +4,6 @@ This README documents publicly accessible APIs from the [Superteam Earn](https:/
 
 ---
 
-File=api-load-tester.js->
-🧨 How This Script in File=api-load-tester.js Could Potentially Take Down the Site
-If this script — or worse, a more aggressive version — were executed at scale, here's what could happen:
-
-Overwhelming Server Resources (Denial of Service):
-
-Each request consumes server CPU, memory, and database queries.
-
-Sending thousands (or millions) of requests quickly can exhaust resources and slow down or crash the backend.
-
-If multiple machines run this in parallel, it becomes a Distributed Denial-of-Service (DDoS) scenario.
-
-Bandwidth Exhaustion:
-
-APIs that return large JSON responses consume significant bandwidth.
-
-High-volume traffic may increase hosting costs or exceed bandwidth limits, especially if responses are not cached efficiently.
-
-Database Strain:
-
-If the API fetches live data from a database (not cached), the DB server could be overwhelmed with thousands of read queries per second.
-
-IP Bans or Cloudflare Blocks:
-
-The website may eventually block the IP address making these requests.
-
-If requests are routed via different proxies or VPNs, that detection becomes harder, potentially making it harder to mitigate.
-
-Indirect Impact on Users:
-
-Real users visiting the platform might experience slow loading, missing data, or complete site unavailability.
-
-👻 If This Were Done Maliciously (Theoretically)
-A malicious actor could:
-
-Run this script from multiple IP addresses (botnet, proxies).
-
-Target different endpoints in rotation to avoid easy detection.
-
-Schedule periodic attacks (e.g. every minute, every hour) to cause intermittent downtime.
-
-Use concurrent requests (e.g. 100 threads or Promise.all) to maximize throughput.
-
 ## 📸 How APIs Were Found
 
 Using the **Network tab** in browser DevTools, we can observe requests made when navigating the website. When actions like visiting a page or scrolling occur, network requests are triggered — and you can inspect those requests to see URLs, payloads, and responses.
@@ -55,7 +12,7 @@ Using the **Network tab** in browser DevTools, we can observe requests made when
 
 📍 ![Network Tab](assets/console3.jpg)
 
-    ![Network Tab](assets/console1.jpg)
+![Network Tab](assets/console1.jpg)
 
 ---
 
@@ -224,3 +181,47 @@ If you're a learner, ethical hacker, or web developer, use this as a case study 
 Let’s build **better**, not break what's working.
 
 ---
+
+File=api-load-tester.js->
+
+🧨 How This Script in File=api-load-tester.js Could Potentially Take Down the Site
+If this script — or worse, a more aggressive version — were executed at scale, here's what could happen:
+
+Overwhelming Server Resources (Denial of Service):
+
+Each request consumes server CPU, memory, and database queries.
+
+Sending thousands (or millions) of requests quickly can exhaust resources and slow down or crash the backend.
+
+If multiple machines run this in parallel, it becomes a Distributed Denial-of-Service (DDoS) scenario.
+
+Bandwidth Exhaustion:
+
+APIs that return large JSON responses consume significant bandwidth.
+
+High-volume traffic may increase hosting costs or exceed bandwidth limits, especially if responses are not cached efficiently.
+
+Database Strain:
+
+If the API fetches live data from a database (not cached), the DB server could be overwhelmed with thousands of read queries per second.
+
+IP Bans or Cloudflare Blocks:
+
+The website may eventually block the IP address making these requests.
+
+If requests are routed via different proxies or VPNs, that detection becomes harder, potentially making it harder to mitigate.
+
+Indirect Impact on Users:
+
+Real users visiting the platform might experience slow loading, missing data, or complete site unavailability.
+
+👻 If This Were Done Maliciously (Theoretically)
+A malicious actor could:
+
+Run this script from multiple IP addresses (botnet, proxies).
+
+Target different endpoints in rotation to avoid easy detection.
+
+Schedule periodic attacks (e.g. every minute, every hour) to cause intermittent downtime.
+
+Use concurrent requests (e.g. 100 threads or Promise.all) to maximize throughput.
