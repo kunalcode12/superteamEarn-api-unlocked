@@ -3,16 +3,16 @@ const axios = require("axios");
 const fs = require("fs");
 
 // List of APIs to test
-const APIs = [
-  "https://earn.superteam.fun/api/homepage/listings/?order=desc&statusFilter=completed",
-  "https://earn.superteam.fun/api/homepage/grants/?userRegion[]=INDIA&userRegion[]=GLOBAL&userRegion[]=India",
-  "https://earn.superteam.fun/api/sidebar/recent-earners",
-  "https://earn.superteam.fun/api/feed/home/",
-  "https://earn.superteam.fun/api/sidebar/stats",
-  "https://earn.superteam.fun/api/listings/region-live-count?region=india",
-  "https://earn.superteam.fun/api/hackathon/public-stats/?slug=breakout",
-  "https://earn.superteam.fun/api/hackathon/?slug=breakout",
-];
+// const APIs = [
+//   "https://earn.superteam.fun/api/homepage/listings/?order=desc&statusFilter=completed",
+//   "https://earn.superteam.fun/api/homepage/grants/?userRegion[]=INDIA&userRegion[]=GLOBAL&userRegion[]=India",
+//   "https://earn.superteam.fun/api/sidebar/recent-earners",
+//   "https://earn.superteam.fun/api/feed/home/",
+//   "https://earn.superteam.fun/api/sidebar/stats",
+//   "https://earn.superteam.fun/api/listings/region-live-count?region=india",
+//   "https://earn.superteam.fun/api/hackathon/public-stats/?slug=breakout",
+//   "https://earn.superteam.fun/api/hackathon/?slug=breakout",
+// ];
 
 // Configuration options
 const config = {
