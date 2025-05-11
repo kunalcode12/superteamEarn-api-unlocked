@@ -23,8 +23,8 @@ const config = {
   totalBatches: 10, // Total number of batches to run
 
   // Output options
-  logToConsole: true,
-  logToFile: true,
+  // logToConsole: true,
+  // logToFile: true,
   logFilePath: "./api-test-results.json",
 
   // Browser options (for Puppeteer)
